@@ -72,21 +72,6 @@ src-tauri/
   src/uploader/      USB 上传和缩略图处理
 ```
 
-## GitHub 上传建议
-
-提交源码和锁文件即可，`node_modules/`、`dist/`、`src-tauri/target/`、安装包和本机缓存都已通过 `.gitignore` 排除。
-
-首次上传可以执行：
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
-
 ## 说明
 
 当前版本只保留 USB 传书，不包含局域网传书和邮箱传书。macOS 未公证安装包在其它设备首次打开时，可能需要右键选择“打开”或在“隐私与安全性”中允许打开。
