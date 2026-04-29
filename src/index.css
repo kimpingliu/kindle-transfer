@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Global styling for the desktop UI.
+ *
+ * The visual language leans on dense dark surfaces, quiet gradients and tight
+ * typography rather than large decorative assets. That keeps the app feeling
+ * close to desktop productivity tools while still being distinct.
+ */
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --bg: #070b11;
+    --panel: rgba(255, 255, 255, 0.04);
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #e5eef7;
+    --muted: #8a97ab;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.26);
+    color: white;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  .panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+      rgba(10, 15, 22, 0.78);
+    border-radius: 28px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 20px 60px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(22px);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  background-clip: padding-box;
+}

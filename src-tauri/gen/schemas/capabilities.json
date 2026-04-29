@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default desktop capability set for the Kindle Relay shell.","local":true,"windows":["main"],"permissions":["core:default","dialog:allow-open"]}}
